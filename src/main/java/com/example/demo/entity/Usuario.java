@@ -5,8 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import org.hibernate.annotations.Where;
 
 @Entity
+@Where(clause = "ativo")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,12 +17,17 @@ public class Usuario {
     private String nickname;
     private String senha;
     private int idade;
+    private boolean ativo;
 
     public Usuario(String nome, String nickname, String senha, int idade) {
         this.nome = nome;
         this.nickname = nickname;
         this.senha = senha;
         this.idade = idade;
+        this.ativo = true;
+    }
+
+    public Usuario() {
     }
 
     public Long getId() {
@@ -61,5 +68,13 @@ public class Usuario {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }
