@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8081:8081"
+    environment:
+      DATABASE_PASS: postgres
+      DATABASE_URL: jdbc:postgresql://db:5432/postgres
+      DATABASE_USER: postgres
+    networks:
+      - app-network
+    depends_on:
+      db:
+        condition: service_started
+        restart: true
+
+  db:
+    image: docker.io/library/postgres:15-alpine    
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    ports:
+      - "5432:5432"  # Expose port for local access if needed
+  
+volumes:
+  postgres_data:  # Persistent volume for database data
+
+networks:
+  app-network:
+    driver: bridge
