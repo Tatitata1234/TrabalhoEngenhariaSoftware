@@ -4,11 +4,13 @@ public class TarefaRequest {
     private String titulo;
     private String status;
     private String descricao;
+    private Long userId;
 
-    public TarefaRequest(String titulo, String status, String descricao) {
+    public TarefaRequest(String titulo, String status, String descricao, Long userId) {
         this.titulo = titulo;
         this.status = status;
         this.descricao = descricao;
+        this.userId = userId;
     }
 
     public String getTitulo() {
@@ -33,5 +35,13 @@ public class TarefaRequest {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

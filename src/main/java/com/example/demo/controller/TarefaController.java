@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/tasks")
 public class TarefaController {
@@ -58,6 +60,17 @@ public class TarefaController {
         try {
             TarefaResponse response = service.deletar(id);
             return ResponseEntity.ok(response);
+        } catch (TarefaNaoExisteException e) {
+            System.out.println(ERRO + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TarefaDetalhadoResponse>> listarPorUsuario(@RequestParam Long assignedTo) {
+        try {
+            List<TarefaDetalhadoResponse> responses = service.listarPorUsuario(assignedTo);
+            return ResponseEntity.ok(responses);
         } catch (TarefaNaoExisteException e) {
             System.out.println(ERRO + e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
