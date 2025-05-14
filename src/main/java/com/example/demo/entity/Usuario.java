@@ -1,11 +1,9 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.*;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Where;
+
+import java.util.List;
 
 @Entity
 @Where(clause = "ativo")
@@ -18,6 +16,9 @@ public class Usuario {
     private String senha;
     private int idade;
     private boolean ativo;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Tarefa> tarefas;
 
     public Usuario(String nome, String nickname, String senha, int idade) {
         this.nome = nome;
@@ -76,5 +77,13 @@ public class Usuario {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public List<Tarefa> getTarefas() {
+        return tarefas;
+    }
+
+    public void setTarefas(List<Tarefa> tarefas) {
+        this.tarefas = tarefas;
     }
 }

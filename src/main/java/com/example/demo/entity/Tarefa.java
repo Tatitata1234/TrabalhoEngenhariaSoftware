@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Where;
 
 @Entity
@@ -16,6 +13,9 @@ public class Tarefa {
     private String status;
     private String descricao;
     private boolean ativo;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     public Tarefa(String titulo, String status, String descricao) {
         this.titulo = titulo;
@@ -65,5 +65,13 @@ public class Tarefa {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
