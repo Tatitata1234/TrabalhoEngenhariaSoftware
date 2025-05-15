@@ -92,7 +92,9 @@ public class TarefaService {
     }
 
     public List<TarefaDetalhadoResponse> listarPorUsuario(Long userId) {
-        Optional<Usuario> usuario = usuarioRepository.findById(userId);
+
+
+                                                            Optional<Usuario> usuario = usuarioRepository.findById(userId);
 
         if (usuario.isEmpty()) {
             throw new UsuarioNaoExisteException(USUARIO_NAO_EXISTE);
