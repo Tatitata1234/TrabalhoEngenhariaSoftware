@@ -18,6 +18,11 @@
 								"key": "usuario",
 								"value": "1",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDkyNDIsImV4cCI6MTc0NzQzNTY0Mn0.hTE7BiL4qjWnIhmj2FeEHY9etThDasg56INXxsTSKu4",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -52,6 +57,11 @@
 								"key": "usuario",
 								"value": "1",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -81,11 +91,26 @@
 				{
 					"name": "deletar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "usuario",
 								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
 								"type": "text"
 							}
 						],
@@ -99,6 +124,13 @@
 							"path": [
 								"users",
 								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -112,6 +144,11 @@
 							{
 								"key": "usuario",
 								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
 								"type": "text"
 							}
 						],
@@ -144,11 +181,16 @@
 								"key": "usuario",
 								"value": "1",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Dormir\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir zzzz\",\r\n    \"userId\": 1\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"titulo\": \"Dormir\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir zzzz\",\r\n    \"userId\": 2\r\n    \r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,6 +219,11 @@
 							{
 								"key": "usuario",
 								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
 								"type": "text"
 							}
 						],
@@ -213,6 +260,11 @@
 								"key": "usuario",
 								"value": "1",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"type": "text"
 							}
 						],
 						"url": {
@@ -239,6 +291,11 @@
 								"key": "usuario",
 								"value": "1",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"type": "text"
 							}
 						],
 						"url": {
@@ -258,12 +315,77 @@
 				},
 				{
 					"name": "listar por usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is within an acceptable range\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate the response schema and required fields\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"\r",
+									"  pm.expect(responseData).to.be.an('object');\r",
+									"  pm.expect(responseData).to.have.property('tasks').that.is.an('array');\r",
+									"\r",
+									"  responseData.tasks.forEach(function(task) {\r",
+									"    pm.expect(task).to.have.property('id').that.is.a('number');\r",
+									"    pm.expect(task).to.have.property('title').that.is.a('string');\r",
+									"    pm.expect(task).to.have.property('description').that.is.a('string');\r",
+									"    pm.expect(task).to.have.property('assignedTo').that.is.a('number');\r",
+									"    pm.expect(task).to.have.property('status').that.is.a('string');\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Tasks array is present and contains expected number of elements\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.tasks).to.exist;\r",
+									"    pm.expect(responseData.tasks).to.be.an('array');\r",
+									"    pm.expect(responseData.tasks).to.have.lengthOf.at.least(1);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"AssignedTo field in each task matches the expected value\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"    responseData.forEach(function(task) {\r",
+									"        pm.expect(task.assignedTo).to.equal(1);\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "usuario",
 								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDkyNDIsImV4cCI6MTc0NzQzNTY0Mn0.hTE7BiL4qjWnIhmj2FeEHY9etThDasg56INXxsTSKu4",
 								"type": "text"
 							}
 						],
@@ -282,6 +404,81 @@
 									"key": "assignedTo",
 									"value": "1"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Thais\",\r\n    \"nickname\": \"tatitata1234\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Thais\",\r\n    \"nickname\": \"tatitata1234\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
 							]
 						}
 					},
