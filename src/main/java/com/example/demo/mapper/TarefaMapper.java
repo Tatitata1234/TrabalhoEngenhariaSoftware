@@ -7,6 +7,8 @@ import com.example.demo.entity.Tarefa;
 
 public class TarefaMapper {
 
+    private TarefaMapper() {}
+
     public static TarefaResponse toResponse(Tarefa tarefa) {
         return new TarefaResponse(tarefa.getId());
     }

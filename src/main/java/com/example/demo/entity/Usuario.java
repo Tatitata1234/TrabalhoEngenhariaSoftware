@@ -1,12 +1,12 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLRestriction;
 
 import java.util.List;
 
 @Entity
-@Where(clause = "ativo")
+@SQLRestriction("ativo")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

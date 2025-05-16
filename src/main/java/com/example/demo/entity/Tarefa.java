@@ -1,10 +1,10 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Where;
+import org.hibernate.annotations.SQLRestriction;
 
 @Entity
-@Where(clause = "ativo")
+@SQLRestriction("ativo")
 public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

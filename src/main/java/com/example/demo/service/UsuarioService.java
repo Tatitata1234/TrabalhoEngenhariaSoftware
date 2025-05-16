@@ -9,7 +9,6 @@ import com.example.demo.exception.UsuarioNaoExisteException;
 import com.example.demo.mapper.UsuarioMapper;
 import com.example.demo.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
@@ -90,7 +89,7 @@ public class UsuarioService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 usuario.getNome(),
                 usuario.getSenha(),
-                Collections.singleton(() -> usuario.getNickname())
+                Collections.singleton(usuario::getNickname)
         );
     }
 }
