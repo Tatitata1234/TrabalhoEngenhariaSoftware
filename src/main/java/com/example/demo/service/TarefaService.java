@@ -57,7 +57,7 @@ public class TarefaService {
         return TarefaMapper.toResponseDetalhado(tarefa.get());
     }
 
-    public TarefaResponse atualizar(TarefaRequest request, Long id) {
+    public TarefaDetalhadoResponse atualizar(TarefaRequest request, Long id) {
         Optional<Tarefa> tarefaOp = repository.findById(id);
 
         if (tarefaOp.isEmpty()) {
@@ -70,7 +70,9 @@ public class TarefaService {
         tarefa.setStatus(request.getStatus());
         tarefa.setTitulo(request.getTitulo());
 
-        return TarefaMapper.toResponse(tarefa);
+        this.repository.save(tarefa);
+
+        return TarefaMapper.toResponseDetalhado(tarefa);
     }
 
     public TarefaResponse deletar(Long id) {
@@ -90,9 +92,7 @@ public class TarefaService {
     }
 
     public List<TarefaDetalhadoResponse> listarPorUsuario(Long userId) {
-
-
-                                                            Optional<Usuario> usuario = usuarioRepository.findById(userId);
+        Optional<Usuario> usuario = usuarioRepository.findById(userId);
 
         if (usuario.isEmpty()) {
             throw new UsuarioNaoExisteException(USUARIO_NAO_EXISTE);
