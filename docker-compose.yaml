@@ -12,7 +12,7 @@ services:
       - app-network
     depends_on:
       db:
-        condition: service_started
+        condition: service_healthy
         restart: true
 
   db:
@@ -26,6 +26,11 @@ services:
       - app-network
     ports:
       - "5432:5432"  # Expose port for local access if needed
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   
 volumes:
   postgres_data:  # Persistent volume for database data

@@ -51,9 +51,9 @@ public class TarefaController {
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualiza tarefa", description = "Atualiza uma tarefa pelo id e request")
-    public ResponseEntity<TarefaResponse> atualizar(@RequestBody TarefaRequest request, @PathVariable Long id) {
+    public ResponseEntity<TarefaDetalhadoResponse> atualizar(@RequestBody TarefaRequest request, @PathVariable Long id) {
         try {
-            TarefaResponse response = service.atualizar(request, id);
+            TarefaDetalhadoResponse response = service.atualizar(request, id);
             return ResponseEntity.ok(response);
         } catch (TarefaNaoExisteException e) {
             System.out.println(ERRO + e.getMessage());
