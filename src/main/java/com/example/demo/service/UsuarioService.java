@@ -59,6 +59,8 @@ public class UsuarioService implements UserDetailsService {
         usuario.setNome(request.getNome());
         usuario.setSenha(request.getSenha());
 
+        this.repository.save(usuario);
+
         return UsuarioMapper.toResponse(usuario);
     }
 

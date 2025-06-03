@@ -19,6 +19,11 @@ public class UsuarioMapper {
     }
 
     public static UsuarioDetalhadoResponse toResponseDetalhado(Usuario usuario) {
-        return new UsuarioDetalhadoResponse(usuario.getId(), usuario.getNome(), usuario.getNickname(), usuario.getIdade());
+        return new UsuarioDetalhadoResponse(
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getNickname(),
+                usuario.getIdade()
+        );
     }
 }

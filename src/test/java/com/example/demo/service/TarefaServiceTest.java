@@ -50,24 +50,17 @@ class TarefaServiceTest {
 
         when(this.mockTaskRepository.findByTitulo(any())).thenReturn(null);
         when(this.mockUserRepository.findById(any())).thenReturn(Optional.of(user));
-        when(this.mockTaskRepository.save(any())).then(new Answer<Tarefa>() {
-            public Tarefa answer(InvocationOnMock invocation) {
-                Tarefa arg = invocation.getArgument(0);
-                arg.setId(0L);
-                return null;
-            }
-        });
 
-        TarefaResponse resp = this.service.criar(
-                new TarefaRequest(
-                        "a",
-                        "a",
-                        "a",
-                        0L
-                )
+        TarefaRequest req = new TarefaRequest(
+                "a",
+                "a",
+                "a",
+                1L
         );
-        TarefaResponse expected = new TarefaResponse(0L);
-        assertEquals(expected.getId(), resp.getId());
+        assertDoesNotThrow(() -> { this.service.criar(req); });
+        verify(this.mockTaskRepository).findByTitulo(req.getTitulo());
+        verify(this.mockUserRepository).findById(req.getUserId());
+        verify(this.mockTaskRepository).save(any());
     }
 
     @Test
@@ -76,16 +69,16 @@ class TarefaServiceTest {
 
         when(this.mockTaskRepository.findByTitulo(any())).thenReturn(new Tarefa());
 
+        TarefaRequest req = new TarefaRequest(
+                "a",
+                "a",
+                "a",
+                0L
+        );
         assertThrows(TarefaJaExisteException.class, () -> {
-            TarefaResponse response = this.service.criar(
-                    new TarefaRequest(
-                            "a",
-                            "a",
-                            "a",
-                            0L
-                    )
-            );
+            this.service.criar(req);
         });
+        verify(this.mockTaskRepository).findByTitulo(req.getTitulo());
     }
 
     @Test
@@ -95,16 +88,17 @@ class TarefaServiceTest {
         when(this.mockTaskRepository.findByTitulo(any())).thenReturn(null);
         when(this.mockUserRepository.findById(any())).thenReturn(Optional.empty());
 
+        TarefaRequest req = new TarefaRequest(
+                "a",
+                "a",
+                "a",
+                0L
+        );
         assertThrows(UsuarioNaoExisteException.class, () -> {
-            this.service.criar(
-                    new TarefaRequest(
-                            "a",
-                            "a",
-                            "a",
-                            0L
-                    )
-            );
+            this.service.criar(req);
         });
+        verify(this.mockTaskRepository).findByTitulo(req.getTitulo());
+        verify(this.mockUserRepository).findById(req.getUserId());
     }
 
     @Test
@@ -114,6 +108,7 @@ class TarefaServiceTest {
         when(mockTaskRepository.findById(any())).thenReturn(Optional.of(task));
 
         TarefaDetalhadoResponse resp = this.service.detalhar(0L);
+        verify(this.mockTaskRepository).findById(task.getId());
         assertEquals(task.getId(), resp.getId());
     }
 
@@ -124,6 +119,7 @@ class TarefaServiceTest {
         assertThrows(TarefaNaoExisteException.class, () -> {
             this.service.detalhar(0L);
         });
+        verify(this.mockTaskRepository).findById(0L);
     }
 
     @Test
@@ -135,7 +131,8 @@ class TarefaServiceTest {
         TarefaRequest req = new TarefaRequest("b", "b", "b", 0L);
 
         TarefaDetalhadoResponse resp = this.service.atualizar(req, 0L);
-        verify(this.mockTaskRepository, times(1)).save(any());
+        verify(this.mockTaskRepository).findById(task.getId());
+        verify(this.mockTaskRepository).save(any());
 
         assertEquals(req.getTitulo(), resp.getTitulo());
         assertEquals(req.getStatus(), resp.getStatus());
@@ -150,6 +147,7 @@ class TarefaServiceTest {
         assertThrows(TarefaNaoExisteException.class, () -> {
             this.service.atualizar(req, 0L);
         });
+        verify(this.mockTaskRepository).findById(any());
     }
 
     @Test
@@ -157,15 +155,10 @@ class TarefaServiceTest {
         Tarefa task = new Tarefa("a", "a", "a");
 
         when(this.mockTaskRepository.findById(any())).thenReturn(Optional.of(task));
-        when(this.mockTaskRepository.save(any())).then(new Answer<Tarefa>() {
-            public Tarefa answer(InvocationOnMock invocation) {
-                Tarefa arg = invocation.getArgument(0);
-                assertFalse(arg.isAtivo());
-                return null;
-            }
-        });
 
         this.service.deletar(0L);
+        verify(this.mockTaskRepository).findById(any());
+        verify(this.mockTaskRepository).save(any());
     }
 
     @Test
@@ -175,6 +168,7 @@ class TarefaServiceTest {
         assertThrows(TarefaNaoExisteException.class, () -> {
             this.service.deletar(0L);
         });
+        verify(this.mockTaskRepository).findById(any());
     }
 
     @Test
@@ -196,7 +190,10 @@ class TarefaServiceTest {
         for(int i = 0; i < tasks.size(); i++) {
             assertEquals(tasks.get(i).getTitulo(), resp.get(i).getTitulo());
         }
+        verify(this.mockUserRepository).findById(any());
+        verify(this.mockTaskRepository).findByUsuarioId(any());
     }
+
     @Test
     void listarPorUsuarioUserIsEmpty() {
         when(this.mockUserRepository.findById(any())).thenReturn(Optional.empty());
@@ -204,5 +201,6 @@ class TarefaServiceTest {
         assertThrows(UsuarioNaoExisteException.class, () -> {
             this.service.listarPorUsuario(0L);
         });
+        verify(this.mockUserRepository).findById(any());
     }
 }
