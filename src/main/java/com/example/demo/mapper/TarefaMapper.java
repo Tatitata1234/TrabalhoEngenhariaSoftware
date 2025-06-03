@@ -18,6 +18,11 @@ public class TarefaMapper {
     }
 
     public static TarefaDetalhadoResponse toResponseDetalhado(Tarefa tarefa) {
-        return new TarefaDetalhadoResponse(tarefa.getId(), tarefa.getTitulo(), tarefa.getStatus(), tarefa.getDescricao());
+        return new TarefaDetalhadoResponse(
+                tarefa.getId(),
+                tarefa.getTitulo(),
+                tarefa.getStatus(),
+                tarefa.getDescricao()
+        );
     }
 }
