@@ -21,13 +21,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDkyNDIsImV4cCI6MTc0NzQzNTY0Mn0.hTE7BiL4qjWnIhmj2FeEHY9etThDasg56INXxsTSKu4",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Thais\",\r\n    \"nickname\": \"tatitata1234\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"nome\": \"Kelly\",\r\n    \"nickname\": \"kellyLinda\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -60,13 +60,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Thais\",\r\n    \"nickname\": \"tatitata1234\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"nome\": \"Thais\",\r\n    \"nickname\": \"tatitata12345\",\r\n    \"senha\" : \"123\",\r\n    \"idade\": 24\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -92,14 +92,7 @@
 					"name": "deletar",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [
@@ -110,12 +103,12 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/users/1",
+							"raw": "http://localhost:8081/users/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,7 +116,7 @@
 							"port": "8081",
 							"path": [
 								"users",
-								"1"
+								"2"
 							],
 							"query": [
 								{
@@ -148,7 +141,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
@@ -184,13 +177,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Dormir\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir zzzz\",\r\n    \"userId\": 2\r\n    \r\n}\r\n\r\n",
+							"raw": "{\r\n    \"titulo\": \"Dormirqq\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir zzzz\",\r\n    \"userId\": 1\r\n    \r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -223,13 +216,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Dormir\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir zzzz\",\r\n    \"userId\": 1\r\n}\r\n\r\n\r\n",
+							"raw": "{\r\n    \"titulo\": \"Dormir\",\r\n    \"status\": \"fazendo\",\r\n    \"descricao\" : \"dormir yyyyy\",\r\n    \"userId\": 1\r\n}\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -263,12 +256,12 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/tasks/1",
+							"raw": "http://localhost:8081/tasks/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -276,7 +269,7 @@
 							"port": "8081",
 							"path": [
 								"tasks",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -294,12 +287,12 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDk3MjEsImV4cCI6MTc0NzQzNjEyMX0.rn1EQEtkXNKLwlqSmGQWfE3xXlP3KSM-j2oj5dThmFE",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/tasks/1",
+							"raw": "http://localhost:8081/tasks/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -307,7 +300,7 @@
 							"port": "8081",
 							"path": [
 								"tasks",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -385,12 +378,12 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXRpdGF0YTEyMzQiLCJpYXQiOjE3NDczNDkyNDIsImV4cCI6MTc0NzQzNTY0Mn0.hTE7BiL4qjWnIhmj2FeEHY9etThDasg56INXxsTSKu4",
+								"value": "{{token1}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/tasks?assignedTo=1",
+							"raw": "http://localhost:8081/tasks?assignedTo=45",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -402,7 +395,7 @@
 							"query": [
 								{
 									"key": "assignedTo",
-									"value": "1"
+									"value": "45"
 								}
 							]
 						}
@@ -416,6 +409,21 @@
 			"item": [
 				{
 					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Supondo que o token está no corpo da resposta como { \"token\": \"abc123\" }\r",
+									"let response = pm.response.json();\r",
+									"pm.environment.set(\"token1\", response.token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -470,7 +478,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/auth/login",
+							"raw": "http://localhost:8081/auth/registrar",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -478,7 +486,7 @@
 							"port": "8081",
 							"path": [
 								"auth",
-								"login"
+								"registrar"
 							]
 						}
 					},
