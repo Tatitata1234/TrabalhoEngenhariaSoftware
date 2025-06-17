@@ -31,7 +31,15 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-  
+
+  job:
+    build:
+      context: ./job  # Caminho onde está o Dockerfile do job e o job.py
+    depends_on:
+      - app
+    networks:
+      - app-network
+
 volumes:
   postgres_data:  # Persistent volume for database data
 
